@@ -1,0 +1,222 @@
+/*==================================
+  REGISTER-FULL.CSS - 註冊頁面所有樣式 (獨立檔案，包含手機欄位修正)
+==================================*/
+
+/* --- 顏色變數定義 --- */
+:root {
+    --dark-green: #005E50;          /* 深綠色 (用於主要按鈕、選中 Tab 等) */
+    --light-beige: #FBF4E9;         /* 淺米白色 (用於表單區塊背景) */
+    --text-color: #333;             /* 主要文字顏色 */
+    --light-grey-text: #666;        /* 次要文字顏色 */
+    --color-border: #ccc;           /* 表單邊框顏色 */
+    --color-social-facebook: #4267B2; /* Facebook 顏色 */
+    --color-social-line: #00C300;     /* Line 顏色 */
+}
+
+/* --- 基礎重置 --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Body/頁面設定 --- */
+body {
+    font-family: Arial, sans-serif, "Microsoft JhengHei", "PingFang TC";
+    color: var(--text-color);
+    background-color: #f5f5f5;
+    
+    /* 讓內容區塊在頁面中央 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- 1200px 居中容器 (僅為概念，實際只用於居中 auth-container) --- */
+.container-1200 {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* 隱藏元素 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* --- 登入/註冊 主要區塊 --- */
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+    background-color: var(--light-beige);
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* --- Tab 切換區域 --- */
+.auth-tabs {
+    display: flex;
+    text-align: center;
+}
+
+.tab {
+    flex: 1;
+    padding: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 註冊頁面：Tab 樣式配置 (註冊被選中，登入未選中) */
+.tab.register {
+    background-color: var(--dark-green);
+    color: white;
+}
+.tab.login {
+    background-color: var(--light-beige);
+    color: var(--text-color);
+}
+
+
+/* --- 表單內容區域 --- */
+.auth-content {
+    padding: 40px 50px;
+    text-align: center;
+}
+
+.auth-content p {
+    margin-bottom: 25px;
+    color: var(--light-grey-text);
+    font-size: 1.05em;
+}
+
+/* --- 通用表單元素樣式 --- */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: white;
+    font-size: 1em;
+}
+
+/* --- 主要登入按鈕 --- */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--dark-green);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #004d41;
+}
+
+/* --- 條款和簡訊訂閱 --- */
+.checkbox-group {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.checkbox-group input {
+    margin-right: 8px;
+}
+
+.checkbox-group a {
+    color: var(--dark-green);
+    text-decoration: none;
+}
+
+
+/* --- 註冊頁面：驗證碼佈局 (修正後的結構) --- */
+
+/* 驗證碼輸入框和按鈕在同一行的容器 */
+.verification-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.verification-row input {
+    flex-grow: 1;
+}
+
+/* 傳送驗證碼按鈕 (在驗證碼輸入框旁邊) */
+.btn-send-code-in-line {
+    padding: 12px 15px;
+    background-color: var(--dark-green);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    flex-shrink: 0;
+    min-width: 100px;
+    white-space: nowrap;
+}
+
+
+/* --- 社群登入/註冊 --- */
+.social-login-text {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #999;
+    font-size: 0.9em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.social-icon.facebook {
+    background-color: var(--color-social-facebook);
+}
+
+.social-icon.line {
+    background-color: var(--color-social-line);
+}

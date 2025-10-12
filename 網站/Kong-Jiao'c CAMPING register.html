@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊會員</title>
+    <link rel="stylesheet" href="Kong-Jiao'c CAMPING register.css">
+</head>
+<body>
+    <div class="container-1200">
+        <div class="auth-container">
+            
+            <div class="auth-tabs">
+                <a href="Kong-Jiao's CAMPING login.html" class="tab login">登入會員</a>
+                <div class="tab register">註冊會員</div>
+            </div>
+
+            <div class="auth-content">
+                <p>請輸入你的登入資訊</p>
+                
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="register-username" class="sr-only">用戶名</label>
+                        <input type="text" id="register-username" placeholder="用戶名" required>
+                    </div>
+
+                    <div class="form-group"> 
+                        <label for="register-phone" class="sr-only">手機</label>
+                        <input type="tel" id="register-phone" placeholder="手機" required>
+                    </div>
+                    
+                    <div class="verification-row">
+                        <label for="register-code" class="sr-only">輸入驗證碼</label>
+                        <input type="text" id="register-code" placeholder="輸入驗證碼" required>
+
+                        <button type="button" class="btn-send-code-in-line">傳送驗證碼</button> 
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-password" class="sr-only">密碼</label>
+                        <input type="password" id="register-password" placeholder="密碼" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-birth" class="sr-only">生日</label>
+                        <input type="date" id="register-birth" value="2001-01-26">
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="agree-terms" required>
+                            我同意網站 <a href="#">服務條款</a> 及 <a href="#">隱私權政策</a>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="subscribe">
+                            訂閱電郵及簡訊
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-login">登入</button>
+                </form>
+
+                <p class="social-login-text">或使用社群帳號註冊</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon facebook">f</a>
+                    <a href="#" class="social-icon line">L</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

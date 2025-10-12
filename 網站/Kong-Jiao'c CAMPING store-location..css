@@ -1,0 +1,143 @@
+/* 基礎樣式重設 */
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif, "微軟正黑體", "Microsoft JhengHei";
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* 輕微的背景色，如您的截圖所示 */
+}
+
+/* 頂部斜線裝飾 - 模仿截圖頂部的藍色線條 */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px; /* 根據需要調整高度 */
+    background-image: repeating-linear-gradient(
+        45deg,
+        #e0f7fa, /* 較淺的藍色 */
+        #e0f7fa 10px,
+        #b2ebf2 10px, /* 較深的藍色 */
+        #b2ebf2 20px
+    );
+    z-index: -1; /* 確保它在內容之後 */
+}
+
+/* 1200px 寬度的主要容器 */
+.store-location-container {
+    max-width: 1200px;
+    margin: 0 auto; /* 居中 */
+    padding: 80px 20px 40px 20px; /* 頂部留出空間給裝飾線條，並設定內邊距 */
+}
+
+/* 上方文字區塊樣式 */
+.top-text-section {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    /* 可以加上您截圖中的底線，如果需要 */
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    /* 模仿截圖中的大標題字體和位置 */
+}
+
+/* 據點資訊整體包裹器 */
+.store-info-wrapper {
+    margin-bottom: 60px;
+    background-color: #fff; /* 可以為每個據點設置白色背景 */
+    padding: 30px; /* 內邊距 */
+    border-radius: 8px; /* 輕微圓角 */
+    /* 輕微的陰影效果，可選 */
+    /* box-shadow: 0 4px 6px rgba(0,0,0,0.1); */
+}
+
+.store-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #5a9b70; /* 可以在名稱下加一條品牌色調的分隔線 */
+    padding-bottom: 10px;
+}
+
+/* 下方圖文內容區塊 (Flexbox 佈局) */
+.store-detail-content {
+    display: flex;
+    gap: 40px; /* 圖文之間的間隔 */
+    align-items: flex-start; /* 對齊到頂部 */
+}
+
+/* 左側圖片區塊 */
+.detail-left-img {
+    flex: 0 0 350px; /* 固定寬度，根據您的設計調整 */
+    max-width: 350px;
+}
+
+.store-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px; /* 圖片輕微圓角 */
+    /* 圖片的邊框，模仿您截圖中圖片的風格 */
+    border: 1px solid #ddd;
+}
+
+/* 右側文字資訊區塊 */
+.detail-right-text {
+    flex-grow: 1; /* 佔據剩餘空間 */
+    padding-top: 20px; /* 稍微向下調整，與左側圖片頂部對齊 */
+}
+
+.info-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* 行間距 */
+    line-height: 1.5;
+}
+
+/* Icon 樣式 */
+.icon-green {
+    color: #5a9b70; /* 綠色，模仿您的截圖中 Icon 的顏色 */
+    font-size: 20px;
+    width: 30px; /* 固定寬度，確保文字對齊 */
+    text-align: center;
+    margin-right: 10px;
+}
+
+/* 文字內容樣式 */
+.info-text {
+    font-size: 16px;
+    color: #555;
+}
+
+/* 分隔線樣式 (模仿截圖最下方的細線) */
+.store-separator {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 40px;
+    width: 100%; /* 確保線條滿寬度 */
+}
+
+
+/* 響應式設計：在小螢幕上將圖文改為上下堆疊 */
+@media (max-width: 768px) {
+    .store-detail-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .detail-left-img {
+        flex: none;
+        max-width: 100%;
+    }
+
+    .detail-right-text {
+        padding-top: 0;
+    }
+}

@@ -1,0 +1,160 @@
+@import url(reset.css);
+
+:root {
+    --dark-green: #005E50;          /* 深綠色 (用於主要按鈕、選中 Tab 等) */
+    --light-beige: #FBF4E9;         /* 淺米白色 (用於表單區塊背景) */
+    --light-grey-text: #666;        /* 次要文字顏色 */
+    --color-social-facebook: #4267B2;
+    --color-social-line: #00C300;
+}
+
+/* --- Body/頁面設定 --- */
+.login-container {
+    font-family: Arial, sans-serif, "Microsoft JhengHei", "PingFang TC";
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 180px;;
+}
+
+/* --- 1200px 居中容器 (僅為概念，實際只用於居中 auth-container) --- */
+.container-1200 {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* 隱藏元素 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* --- 登入/註冊 主要區塊 --- */
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+    background-color: var(--light-beige);
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* --- Tab 切換區域 --- */
+.auth-tabs {
+    display: flex;
+    text-align: center;
+}
+
+.tab {
+    flex: 1;
+    padding: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 登入頁面：Tab 樣式配置 (登入被選中，註冊未選中) */
+.tab.login {
+    background-color: var(--dark-green);
+    color: white;
+}
+.tab.register {
+    background-color: var(--light-beige);
+    color: var(--text-color);
+}
+
+/* --- 表單內容區域 --- */
+.auth-content {
+    padding: 40px 50px;
+    text-align: center;
+}
+
+.auth-content p {
+    margin-bottom: 25px;
+    color: var(--light-grey-text);
+    font-size: 1.05em;
+}
+
+/* --- 通用表單元素樣式 --- */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 1em;
+}
+
+/* --- 主要登入按鈕 --- */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--dark-green);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #004d41;
+}
+
+/* --- 社群登入/註冊 --- */
+.social-login-text {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #999;
+    font-size: 0.9em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.social-icon.facebook {
+    background-color: var(--color-social-facebook);
+}
+
+.social-icon.line {
+    background-color: var(--color-social-line);
+}

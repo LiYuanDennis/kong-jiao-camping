@@ -1,0 +1,186 @@
+/* 基本重置和字體 */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #f7f3e8; /* 接近米白的背景色 */
+}
+
+/* 主容器 */
+.faq-container {
+    width: 100%;
+    max-width: 1200px; /* 視情況調整最大寬度 */
+    margin: 0 auto;
+    overflow: hidden; /* 確保內容不會溢出 */
+}
+
+/* 頂部綠色部分（標頭區塊） */
+.faq-header-section {
+    background-color: #5d816a; /* 綠色背景 */
+    color: white;
+    padding: 60px 0 0 0; /* 調整內邊距 */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    /* 確保文字內容居中或靠左 */
+    max-width: inherit; /* 讓它與主容器同寬 */
+    margin: 0 auto;
+}
+
+/* 標頭左側文字 */
+.faq-text-content {
+    padding-left: 5%; /* 左側間距 */
+    z-index: 2; /* 確保文字在 Q&A 之上 */
+}
+
+.faq-text-content h1 {
+    font-size: 3em;
+    margin-bottom: 0.1em;
+    font-weight: bold;
+}
+
+.faq-text-content p {
+    font-size: 1.2em;
+    margin-top: 0;
+    font-weight: 300;
+}
+
+/* 標頭右側 Q&A 大字 */
+.qa-text {
+    font-size: 8em;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.2); /* 透明白色 */
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    line-height: 1;
+    z-index: 1;
+}
+
+/* 主要內容區塊 */
+.faq-main-content {
+    display: flex;
+    max-width: 1000px; /* 內容區塊的實際寬度 */
+    margin: 0 auto;
+    position: relative; /* 為了讓內容區塊可以部分覆蓋綠色背景 */
+    padding-bottom: 50px;
+}
+
+/* 左側欄：插畫和按鈕 */
+.faq-left-column {
+    width: 40%;
+    position: relative;
+    /* 讓插畫部分可以與綠色背景接壤 */
+    margin-top: -100px; /* 負邊距將內容拉上去覆蓋綠色部分 */
+    padding-left: 5%;
+}
+
+.illustration img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* 這裡需要替換成您的實際插畫圖片 */
+    min-height: 300px; /* 佔位符高度 */
+    background-color: transparent; /* 插畫背景透明 */
+}
+
+/* 左側按鈕 */
+.faq-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    color: #5d816a; /* 綠色文字 */
+    border: 2px solid #5d816a; /* 綠色邊框 */
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.faq-button:hover {
+    background-color: #5d816a;
+    color: white;
+}
+
+.faq-button .arrow {
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+
+/* 右側欄：Q&A 列表 */
+.faq-right-column {
+    width: 60%;
+    padding: 20px 5%;
+    /* 米白背景從這裡開始 */
+    background-color: #f7f3e8;
+}
+
+/* Q&A 項目樣式 */
+.qa-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.qa-title {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.qa-item .icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: #5d816a; /* 綠色圖標 */
+}
+
+.toggle-icon {
+    font-size: 1.5em;
+    color: #5d816a;
+    line-height: 1;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .faq-header-section {
+        padding: 40px 0;
+    }
+
+    .qa-text {
+        font-size: 5em;
+    }
+
+    .faq-main-content {
+        flex-direction: column;
+        padding-top: 0;
+    }
+
+    .faq-left-column,
+    .faq-right-column {
+        width: 100%;
+        padding: 0 5%;
+    }
+
+    .faq-left-column {
+        margin-top: -50px; /* 調整在手機上的負邊距 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .illustration {
+        width: 60%; /* 手機上縮小插畫 */
+        margin-bottom: 20px;
+    }
+}
