@@ -1,5 +1,98 @@
 @import url(reset.css);
 
+
+
+@import url(reset.css);
+
+body {
+    font-family: Arial, sans-serif, "Microsoft JhengHei", "PingFang TC";
+    color: var(--dark-green);
+    background-color: var(--light-beige);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+:root {
+    --dark-green: #005E50;
+    --light-beige: #FBF4E9;
+    --accent-green: #3c845a;
+    --text-color: #333;
+    --light-grey-text: #666;
+}
+
+/* --- Header 區塊 --- */
+.header {
+    background-color:white;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainlogo {
+  display: block;
+  width: 240px;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    margin-right: 36px;
+}
+
+.nav-menu ul li {
+    margin-left: 30px;
+}
+
+.nav-menu ul li a {
+    color: #3c845a;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+
+}
+
+.nav-menu ul li a:hover {
+    color: var(--dark-green);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 36px;
+}
+
+.nav-icons a {
+    color: #3c845a;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-icons a:hover {
+    color: var(--dark-green);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
 :root {
     --dark-green: #005E50;          /* 深綠色 (用於主要按鈕、選中 Tab 等) */
     --light-beige: #FBF4E9;         /* 淺米白色 (用於表單區塊背景) */
@@ -26,6 +119,7 @@
     display: flex;
     justify-content: center;
     padding: 40px 20px;
+    padding-bottom: 100px;
 }
 
 /* 隱藏元素 */
@@ -157,4 +251,145 @@ input[type="date"] {
 
 .social-icon.line {
     background-color: var(--color-social-line);
+}
+
+/* --- Footer 區塊 --- */
+.footer-container {
+    background-color: var(--dark-green)
+}
+
+.footer-container-main{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark-green);
+    padding: 40px 0;
+}
+
+/* --- 左側區域 --- */
+.left-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 50px;
+}
+
+.nav-links-area {
+    margin-bottom: 40px;
+}
+
+
+.main-titles-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+.main-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.main-title:hover {
+    color: var(--accent-green)
+}
+
+.separator {
+    border: 0;
+    height: 1px;
+    background-color: #D1D1D1;
+    margin: 0 0 24px 0;
+}
+
+.sub-links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.link-column {
+    display: flex;
+    flex-direction: column;
+}
+.link-column a {
+    color: #D1D1D1;
+    font-size: 18px;
+    text-decoration: none;
+    line-height: 2.5;
+    text-align: center;
+
+}
+
+.link-column a:hover {
+    color: #3C845A;
+}
+
+.icon-section {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px; 
+  justify-items: center; 
+  align-items: center;  
+}
+
+.icon-section a {
+    width: 24px;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #FBF4E9;
+}
+
+.icon-section a:hover {
+    color: #3C845A;
+}
+
+
+/* --- 右側區域 --- */
+.contact-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 40px;
+    color: #005E50;
+    width: 400px;
+}
+
+.logo-area {
+    align-items: center;
+    margin-bottom: 20px;
+    width: 400px;
+    height: auto;
+}
+
+.contact-separator {
+    border: 0;
+    height: 1px;
+    background-color: #D1D1D1;
+    margin: 15px 0;
+}
+
+
+.store-info {
+    display: flex;
+}
+.store-name {
+    font-size: 20px;
+    font-weight: 600;
+    padding:0 32px 0 32px;
+    color: var(--accent-green);
+    line-height: 2.5;
+}
+.details {
+    font-size: 16px;
+    color: #000
+}
+
+.number {
+    font-weight: 600;
 }

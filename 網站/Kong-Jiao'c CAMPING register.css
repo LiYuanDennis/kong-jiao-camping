@@ -1,6 +1,96 @@
-/*==================================
-  REGISTER-FULL.CSS - 註冊頁面所有樣式 (獨立檔案，包含手機欄位修正)
-==================================*/
+
+
+@import url(reset.css);
+
+body {
+    font-family: Arial, sans-serif, "Microsoft JhengHei", "PingFang TC";
+    color: var(--dark-green);
+    background-color: var(--light-beige);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+:root {
+    --dark-green: #005E50;
+    --light-beige: #FBF4E9;
+    --accent-green: #3c845a;
+    --text-color: #333;
+    --light-grey-text: #666;
+}
+
+/* --- Header 區塊 --- */
+.header {
+    background-color:white;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainlogo {
+  display: block;
+  width: 240px;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    margin-right: 36px;
+}
+
+.nav-menu ul li {
+    margin-left: 30px;
+}
+
+.nav-menu ul li a {
+    color: #3c845a;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+
+}
+
+.nav-menu ul li a:hover {
+    color: var(--dark-green);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 36px;
+}
+
+.nav-icons a {
+    color: #3c845a;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-icons a:hover {
+    color: var(--dark-green);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
 
 /* --- 顏色變數定義 --- */
 :root {
@@ -220,3 +310,4 @@ input[type="date"] {
 .social-icon.line {
     background-color: var(--color-social-line);
 }
+
