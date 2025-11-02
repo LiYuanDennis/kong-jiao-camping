@@ -1,15 +1,3 @@
-// Q&A 手風琴效果
-document.addEventListener("DOMContentLoaded", () => {
-  const questions = document.querySelectorAll(".qa-question");
-
-  questions.forEach(q => {
-    q.addEventListener("click", () => {
-      const parent = q.parentElement;
-      parent.classList.toggle("active");
-    });
-  });
-});
-
 function setupMarquee(id, direction) {
   const marquee = document.getElementById(id);
   const track = marquee.querySelector('.marquee-track');
@@ -45,7 +33,7 @@ function setupMarquee(id, direction) {
 setupMarquee('row1', 'left');
 setupMarquee('row2', 'right');
 
-
+// Q&A 手風琴效果
 const items = document.querySelectorAll(".accordion button");
 items.forEach((item) => {
   item.addEventListener("click", () => {
