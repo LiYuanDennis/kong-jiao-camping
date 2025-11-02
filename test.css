@@ -1,0 +1,230 @@
+@import url("reset.css");
+
+:root {
+  --dark-green: #005E50;
+  --light-beige: #FBF4E9;
+  --accent-green: #3c845a;
+  --text-color: #333;
+  --light-grey-text: #666;
+}
+
+body {
+  font-family: "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+  color: var(--text-color);
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ====== 上半部標題區 ====== */
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding:20px;
+  position: relative;
+  overflow: visible;
+  padding-bottom: 20px;
+}
+
+.faq-header-bg {
+  position: absolute; /* 關鍵：讓它不參與 flex */
+  inset: 0;           /* = top:0; right:0; bottom:0; left:0; */
+  z-index: -1;
+}
+
+.faq-header-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw; /* 左右滿版 */
+  height: 250%; /* 比原本高一點，就能「超出底部」 */
+  background-color: var(--accent-green);
+  z-index: -1;
+}
+
+
+.faq-header-left h2 {
+  font-size: 4.6rem;
+  color: white;
+  margin-bottom: 0.2em;
+}
+
+.faq-header-left p {
+  font-size: 2.3rem;
+  color: white;
+}
+
+.faq-header-right h3 {
+  font-size: 8.5rem;
+  color: var(--dark-green);
+  font-weight: 900;
+  opacity: 0.5;
+  letter-spacing: 2px;
+}
+
+/* ====== 下半部主要內容 ====== */
+.faq-content {
+  display: grid;
+  grid-template-columns:1fr 1fr;;
+  gap: 40px;
+  position: relative;
+  padding-top: 32px;
+}
+
+/* 左側：按鈕與貓頭鷹 */
+.faq-left {
+  flex: 1 1 40%;
+  color: #fff;
+  border-radius: 16px 0 0 16px;
+  padding: 50px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-btn {
+  display: inline-block;
+  background: #fff;
+  color: var(--dark-green);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.faq-btn:hover {
+  background-color: var(--accent-green);
+  color: #fff;
+}
+
+.faq-owl {
+  position: absolute;
+  left: 40%;
+  top: 18px;
+  width: 214px;
+  object-fit: contain;
+}
+
+/* 右側：手風琴區 + 延伸底色 */
+.faq-right {
+  flex: 1 1 60%;
+  position: relative;
+  padding: 28px 0 0 28px;
+}
+
+.faq-bg {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50vw; /* 從中線延伸到右邊剛好 */
+  height: 100%;
+  background-color: var(--light-beige);
+  z-index: -1;
+  border-radius: 40px 0 0 40px;
+}
+
+/* Accordion */
+.accordion-item {
+  background-color: #fff;
+  border-radius: 15px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  overflow: hidden;
+  margin-left: 28px;
+}
+
+.accordion-item button {
+  width: 100%;
+  padding: 22px 25px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* 左側放大鏡 */
+.icon-search {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #d8cf65;
+  margin-right: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.icon-search::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 6px;
+  background: #d8cf65;
+  bottom: -4px;
+  right: -1px;
+  transform: rotate(45deg);
+}
+
+/* 右側 + 號 */
+.icon-plus {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-green);
+  color: var(--accent-green);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.icon-plus::before,
+.icon-plus::after {
+  content: "";
+  position: absolute;
+  background: var(--accent-green);
+  left: 6px;
+  right: 6px;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icon-plus::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* 展開內容 */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.accordion-content p {
+  padding: 0 25px 20px 60px;
+  color: var(--light-grey-text);
+  line-height: 1.6;
+}
+
+/* 展開狀態 */
+.accordion-item button[aria-expanded="true"] + .accordion-content {
+  max-height: 200px;
+}
+
+.accordion-item button[aria-expanded="true"] .icon-plus::after {
+  transform: translateY(-50%) rotate(0deg);
+}

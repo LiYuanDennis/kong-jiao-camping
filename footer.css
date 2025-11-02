@@ -1,0 +1,115 @@
+@import url(reset.css);
+
+:root {
+  --dark-green: #005E50;
+  --light-beige: #FBF4E9;
+  --accent-green: #3C845A;
+  --text-color: #333;
+  --light-grey-text: #666;
+}
+
+body {
+  font-family: Arial, "Microsoft JhengHei", "PingFang TC", sans-serif;
+  color: var(--dark-green);
+}
+
+.footer .container {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* --- footer區 --- */
+.footer{
+    width: 100%;
+}
+
+.footer-bottom {
+  background-color: var(--dark-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 0;
+  color: var(--light-beige);
+  opacity: 1;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.footer-bottom.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: none;  /* ← 保留在最後狀態，不再回到初始 */
+}
+
+.footer-bottom-logo img {
+  width: 220px;
+  margin-bottom: 16px;
+  animation: fadeUp 1.2s ease forwards;
+  background-color: var(--light-beige);
+  border-radius: 24px;
+  padding:6px 12px 12px 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-links {
+  padding-bottom: 10px;
+  opacity: 0;
+  animation: fadeUp 1.2s ease 0.2s forwards;
+
+}
+
+.footer-links a {
+  color: var(--light-beige);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-green);
+}
+
+.footer-slogan {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px 0 8px 0;
+  opacity: 0;
+  animation: fadeUp 1.2s ease 0.3s forwards;
+  border-bottom : 1px solid var(--light-beige) ;
+  padding-bottom: 10px;
+}
+
+/* icon */
+.icon-section {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  justify-items: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeUp 1.2s ease 0.6s forwards; 
+}
+
+.icon-section a {
+  font-size: 24px;
+  color: #FBF4E9;
+}
+
+.icon-section a:hover {
+  color: var(--accent-green);
+}
+
+/* --- 淡入上移動畫 --- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
