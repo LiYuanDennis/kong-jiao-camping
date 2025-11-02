@@ -215,7 +215,7 @@ body {
 }
 
 .product-card a {
-  background: var(--accent);
+  background: var(--accent-green);
   color: #fff;
   text-decoration: none;
   padding: 5px 12px;
